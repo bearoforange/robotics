@@ -1,0 +1,42 @@
+
+#include <LiquidCrystal.h>
+ 
+int trigPin = 4;
+int echoPin = 5;
+constexpr uint8_t PIN_RS = 6;
+constexpr uint8_t PIN_EN = 7;
+constexpr uint8_t PIN_DB4 = 8;
+constexpr uint8_t PIN_DB5 = 9;
+constexpr uint8_t PIN_DB6 = 10;
+constexpr uint8_t PIN_DB7 = 11;
+int duration, distance;
+
+LiquidCrystal lcd(PIN_RS, PIN_EN, PIN_DB4, PIN_DB5, PIN_DB6, PIN_DB7);
+ 
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+
+}
+ 
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn (echoPin, HIGH);
+  distance = abs(duration / 58);
+  Serial.print(distance);
+  Serial.println(" cm");
+  delay(100);
+    lcd.begin(16, 2);
+  
+  lcd.setCursor(0, 0);
+  
+  lcd.print("I Love You");
+ 
+  lcd.setCursor(0, 1);
+
+  lcd.print(distance);
+}

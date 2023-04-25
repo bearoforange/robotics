@@ -1,0 +1,20 @@
+#include <LiquidCrystal.h>
+int RS = 6;
+int EN = 7;
+int DB4 = 8;
+int DB5 = 9;
+int DB6 = 10;
+int DB7 = 11;
+
+LiquidCrystal lcd(RS, EN, DB4, DB5, DB6, DB7);
+void setup() {
+  lcd.begin(16, 2);
+  lcd.setCursor(0, 0);
+  lcd.print("Hello!");
+  lcd.setCursor(0, 1);
+  lcd.print("Just do it!");
+}
+
+void loop() {
+  
+}

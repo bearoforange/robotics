@@ -10,8 +10,8 @@ LiquidCrystal lcd(RS, EN, DB4, DB5, DB6, DB7);
 byte dude[8] {
   0b01110, 0b11111, 0b01110, 0b00100, 0b11111, 0b00100, 0b01110, 0b01010
 };
-lcd.createChar(0, dude);
 void setup() {
+  lcd.createChar(0, dude);
   lcd.begin(16, 2);
   lcd.clear();
   lcd.setCursor(0, 0);

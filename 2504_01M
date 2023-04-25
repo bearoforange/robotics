@@ -1,0 +1,24 @@
+#include <LiquidCrystal.h>
+int RS = 6;
+int EN = 7;
+int DB4 = 8;
+int DB5 = 9;
+int DB6 = 10;
+int DB7 = 11;
+
+LiquidCrystal lcd(RS, EN, DB4, DB5, DB6, DB7);
+void setup() {
+  lcd.begin(16, 2);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+}
+
+void loop() {
+  int i = 0;
+  for (i; i<10; i++) {
+    lcd.setCursor(i, 0);
+    lcd.print("JDI!");
+    delay(1000);
+    lcd.clear();
+  }
+}

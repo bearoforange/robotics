@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
   int i = 0;
-  for (i; i<10; i++) {
+  for (i; i<16; i++) {
     lcd.setCursor(i, 0);
     lcd.print(char(0));
     delay(1000);

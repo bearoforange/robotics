@@ -1,1 +1,7 @@
-
+#include <LiquidCrystal.h>
+void setup() {
+  lcd.begin(16, 2);
+  lcd.print("1234");
+ }
+ void loop {
+ }

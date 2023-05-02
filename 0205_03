@@ -1,0 +1,28 @@
+#include <LiquidCrystal.h>
+int RS = 6;
+int EN = 7;
+int DB4 = 8;
+int DB5 = 9;
+int DB6 = 10;
+int DB7 = 11;
+LiquidCrystal lcd(RS, EN, DB4, DB5, DB6, DB7);
+
+int ibp() {
+  if (analogRead(A0) > 512) {
+    return 1; 
+  }
+  if (analogRead(A0) <= 512) {
+    return 0;
+  }
+}
+
+void setup() {
+  pinMode(A0, INPUT);
+  lcd.begin(16, 2);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+}
+
+void loop() {
+
+}
